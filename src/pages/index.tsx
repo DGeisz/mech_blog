@@ -141,7 +141,7 @@ const Header = () => {
           </div>
           <main className="flex min-h-[92vh] flex-col items-center justify-between p-0 pt-24 md:p-24">
             <div className="z-10 max-w-5xl w-full justify-between text-sm flex flex-col">
-              <div className="dark:text-white text-slate-900 text-3xl font-semibold">
+              <div className="dark:text-white text-slate-900 text-3xl md:text-5xl font-semibold">
                 Hey, friend! I'm Danny :)
               </div>
               <div className={clsx('flex items-center', 'self-center')}>
@@ -150,7 +150,12 @@ const Header = () => {
                     src={'/headshot.jpg'}
                     alt={'linkedin'}
                     num={1}
-                    description={'Responsible LinkedIn Headshot'}
+                    description={
+                      <>
+                        Responsible <br />
+                        LinkedIn Headshot
+                      </>
+                    }
                   />
                   {medium && (
                     <>
@@ -228,9 +233,12 @@ const Header = () => {
                 </a>
                 .
                 <br />
-                <br />I actually have <a href={'https://exfizzassist.com'}>another blog</a> which I
-                made years ago. There you can find a range of juicer, less technical content,
-                ranging from discussions about{' '}
+                <br />I actually have{' '}
+                <a href={'https://exfizzassist.com'} className={LINK_CLASSES}>
+                  another blog
+                </a>{' '}
+                which I made years ago. There you can find a range of juicer, less technical
+                content, ranging from discussions about{' '}
                 <a
                   href={'https://exfizzassist.com/posts/explosive-continuity/'}
                   className={LINK_CLASSES}
