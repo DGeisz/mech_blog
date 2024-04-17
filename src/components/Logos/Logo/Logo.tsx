@@ -19,6 +19,10 @@ const Logo = ({
     color="text-slate-900 dark:text-white",
     ...props
 }: Props) => {
+    return <div className="text-2xl font-bold">
+        Danny Geisz
+    </div>
+
     return(
         <svg 
             viewBox="0 0 980 185" 

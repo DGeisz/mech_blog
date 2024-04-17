@@ -1,9 +1,9 @@
-import { useIsomorphicLayoutEffect } from '@/utils/Hooks/useIsomorphicLayoutEffect';
-import { Listbox } from '@headlessui/react';
-import clsx from 'clsx';
-import { Fragment, useEffect, useRef } from 'react';
-import { create } from 'zustand';
-import { MoonIcon, PCIcon, SunIcon } from '@brandonowens/elegant-ui';
+import { useIsomorphicLayoutEffect } from '@/utils/Hooks/useIsomorphicLayoutEffect'
+import { Listbox } from '@headlessui/react'
+import clsx from 'clsx'
+import { Fragment, useEffect, useRef } from 'react'
+import { create } from 'zustand'
+import { MoonIcon, PCIcon, SunIcon } from '@brandonowens/elegant-ui'
 
 const useSetting = create((set) => ({
   setting: null,
@@ -60,7 +60,9 @@ function SunIconOld({ selected, ...props }) {
       <path
         d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
         className={
-          selected ? 'fill-primary-400/20 stroke-primary-500' : 'stroke-slate-400 dark:stroke-slate-500'
+          selected
+            ? 'fill-primary-400/20 stroke-primary-500'
+            : 'stroke-slate-400 dark:stroke-slate-500'
         }
       />
       <path
@@ -70,7 +72,6 @@ function SunIconOld({ selected, ...props }) {
     </svg>
   )
 }
-
 
 /**
  * @deprecated - To be removed in version 3
@@ -161,9 +162,6 @@ function useTheme() {
   return [setting, setSetting]
 }
 
-/**
- * @deprecated - To be removed in version 3
- */
 export function ThemeToggle({ panelClassName = 'mt-4' }) {
   let [setting, setSetting] = useTheme()
 
@@ -205,9 +203,6 @@ export function ThemeToggle({ panelClassName = 'mt-4' }) {
   )
 }
 
-/**
- * @deprecated - To be removed in version 3
- */
 export function ThemeSelect() {
   let [setting, setSetting] = useTheme()
 

@@ -1,21 +1,23 @@
-import { CMSContext } from '@/utils/Context';
-import Link from 'next/link';
-import { useContext } from 'react';
-import { GitHubIcon } from "@brandonowens/elegant-ui";
+import { CMSContext } from '@/utils/Context'
+import Link from 'next/link'
+import React, { useContext } from 'react'
+import { GitHubIcon } from '@brandonowens/elegant-ui'
+import Config from 'Config'
+import { BsTwitterX } from 'react-icons/bs'
 
 interface Props {
   /**
    * Is the sidebar open?
    */
-  isOpen: boolean;
-};
+  isOpen: boolean
+}
 
 /**
  * The admin sidebar.
  * @returns An html sidebar to be used within the admin area of the cms.
  */
 export default function Sidebar({ isOpen = false }: Props) {
-  const { collections } = useContext(CMSContext);
+  const { collections } = useContext(CMSContext)
 
   return (
     <aside
@@ -108,13 +110,23 @@ export default function Sidebar({ isOpen = false }: Props) {
             className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
             target="_blank"
           >
-              <span className="sr-only">
-                  Elegant Framework on GitHub
-              </span>
-              <GitHubIcon className="w-5 h-5 text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"/>
+            <span className="sr-only">Elegant Framework on GitHub</span>
+            <GitHubIcon className="w-5 h-5 text-slate-400 hover:text-slate-500 dark:hover:text-slate-300" />
+          </a>
+
+          <a
+            href={Config('app.twitter')}
+            className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
+            target="_blank"
+          >
+            <span className="sr-only">{Config('app.name')} on GitHub</span>
+            <BsTwitterX
+              size={16}
+              className=" text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
+            />
           </a>
         </div>
       </div>
     </aside>
-  );
-};
+  )
+}

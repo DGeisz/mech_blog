@@ -1,41 +1,39 @@
-import { NewsletterForm } from '@/components/NewsletterForm/NewsletterForm';
-import Link from 'next/link';
-import clsx from 'clsx';
-import { getDocuments } from '@/utils/Collections/collection';
-import { Post } from '@/types/Post';
-import moment from 'moment';
-import GenerateRssFeed from '@/utils/RSS/GenerateRSSFeed';
-import Config from 'Config';
+import { NewsletterForm } from '@/components/NewsletterForm/NewsletterForm'
+import Link from 'next/link'
+import clsx from 'clsx'
+import { getDocuments } from '@/utils/Collections/collection'
+import { Post } from '@/types/Post'
+import moment from 'moment'
+import GenerateRssFeed from '@/utils/RSS/GenerateRSSFeed'
+import Config from 'Config'
 
 interface Props {
   /**
    * A list of blog post items.
    */
-  posts: Post[];
-};
+  posts: Post[]
+}
 
 /**
  * The main blog page that loads a list of blog posts.
  * @returns An html blog page with a list of posts.
  */
-export default function Blog({
-  posts
-}: Props) {
+export default function Blog({ posts }: Props) {
   return (
     <>
       <main className="max-w-[52rem] mx-auto px-4 pb-28 sm:px-6 md:px-8 xl:px-12 lg:max-w-6xl">
         <header className="py-16 sm:text-center">
           <h1 className="mb-4 text-3xl sm:text-4xl tracking-tight text-slate-900 font-extrabold dark:text-slate-200">
-            Latest Updates
+            Latest Juice
           </h1>
-          {Config('app.convert_action_url') !== "" && (
+          {Config('app.convert_action_url') !== '' && (
             <>
               <p className="text-lg text-slate-700 dark:text-slate-400">
                 All the latest {Config('app.name')} news, straight from the team.
               </p>
               <section className="mt-3 max-w-sm sm:mx-auto sm:px-4">
                 <h2 className="sr-only">Sign up for our newsletter</h2>
-                <NewsletterForm action={Config('app.convert_action_url')}/>
+                <NewsletterForm action={Config('app.convert_action_url')} />
               </section>
             </>
           )}
@@ -105,20 +103,20 @@ export default function Blog({
         </div>
       </main>
     </>
-  );
+  )
 }
 
 Blog.layoutProps = {
   meta: {
     title: 'Blog - Elegant - All the latest Elegant news, straight from the team.',
-    description: 'All the latest Elegant news, straight from the team.'
+    description: 'All the latest Elegant news, straight from the team.',
   },
 }
 
 export const getStaticProps = async () => {
   // build our rss feed
   if (process.env.NODE_ENV === 'production') {
-    await GenerateRssFeed();
+    await GenerateRssFeed()
   }
 
   const posts = getDocuments('posts', [
@@ -128,17 +126,17 @@ export const getStaticProps = async () => {
     'description',
     'coverImage',
     'publishedAt',
-  ]);
+  ])
 
   posts.map((post) => {
-    if(post.status === "published"){
-      return post;
+    if (post.status === 'published') {
+      return post
     }
-  });
+  })
 
   return {
     props: {
-      posts: posts
+      posts: posts,
     },
   }
 }
