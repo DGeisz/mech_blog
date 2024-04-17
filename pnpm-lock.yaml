@@ -215,6 +215,9 @@ dependencies:
   react:
     specifier: ^18.2.0
     version: 18.2.0
+  react-colorful:
+    specifier: ^5.6.1
+    version: 5.6.1(react-dom@18.2.0)(react@18.2.0)
   react-datepicker:
     specifier: ^4.15.0
     version: 4.25.0(react-dom@18.2.0)(react@18.2.0)
@@ -16780,7 +16783,6 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: true
 
   /react-datepicker@4.25.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-zB7CSi44SJ0sqo8hUQ3BF1saE/knn7u25qEMTO1CQGofY1VAKahO8k9drZtp0cfW1DMfoYLR3uSY1/uMvbEzbg==}
