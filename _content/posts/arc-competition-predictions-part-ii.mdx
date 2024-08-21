@@ -10,10 +10,10 @@ coverImage: ''
 publishedAt: '2024-07-09T05:32:16.900Z'
 ---
 
-In a [previous post](https://www.dannygeisz.com/blog/arc-competition), I made a prediction about the form of the solution that will end up getting above 85% accuracy in the [Arc Competition](https://www.dannygeisz.com/blog/arc-competition).  However, that post was short and imprecise.  I’m making this follow-up post to be more precise about my prediction.
+In a [previous post](https://www.dannygeisz.com/blog/arc-competition), I made a prediction about the form of the solution that will end up getting above 85% accuracy in the [Arc Competition](https://www.dannygeisz.com/blog/arc-competition). However, that post was short and imprecise. I’m making this follow-up post to be more precise about my prediction.
 
-# Prediction
+### Prediction
 
-Here’s what I think the winning system is going to look like.  You have an LLM (or a multi-model model) that looks at representations of the input/output pairs, and this LLM generates hypotheses about the input/output pairs.  These hypotheses could be about just about anything — a pattern in the input grids, a pattern in the output grids, a pattern in how the inputs/outputs relate, etc.  The LLM additionally generates a test function that can validate the hypothesis.  I presume most of the LLM’s hypotheses are going to be wrong, but if you crank the temperature and generate enough of them, I’d suspect the LLM would eventually find a couple that prove valid.
+Here’s what I think the winning system is going to look like. You have an LLM (or a multi-model model) that looks at representations of the input/output pairs, and this LLM generates hypotheses about the input/output pairs. These hypotheses could be about just about anything — a pattern in the input grids, a pattern in the output grids, a pattern in how the inputs/outputs relate, etc. The LLM additionally generates a test function that can validate the hypothesis. I presume most of the LLM’s hypotheses are going to be wrong, but if you crank the temperature and generate enough of them, I’d suspect the LLM would eventually find a couple that prove valid.
 
-As the LLM produces more and more valid hypotheses, it gets closer and closer to being able to write a function that maps each input grid to the corresponding output.  Eventually it generates this function, and then you use this function to make your final prediction. 
+As the LLM produces more and more valid hypotheses, it gets closer and closer to being able to write a function that maps each input grid to the corresponding output. Eventually it generates this function, and then you use this function to make your final prediction.
