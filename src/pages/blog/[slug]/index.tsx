@@ -11,6 +11,7 @@ import { ArticleJsonLd } from 'next-seo'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import socialCardLarge from '@/img/social-card-large.jpg'
+import 'katex/dist/katex.min.css'
 
 type Props = {
   /**

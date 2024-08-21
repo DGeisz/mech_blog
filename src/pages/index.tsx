@@ -11,8 +11,7 @@ import { GitHubIcon } from '@brandonowens/elegant-ui'
 import Image from 'next/image'
 import { useScreenSize } from '@/hooks/useScreenSize'
 import Head from 'next/head'
-import { FaSquareXTwitter } from 'react-icons/fa6'
-import { BsTwitterX } from 'react-icons/bs'
+import { BsTwitterX, BsLinkedin } from 'react-icons/bs'
 
 const IMAGE_WIDTH = 300
 
@@ -125,12 +124,23 @@ const Header = () => {
                     </a>
                   )}
                   <a
-                    href={Config('app.twitter')}
+                    href={'https://twitter.com/danny_nkjg'}
                     className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
                     target="_blank"
                   >
                     <span className="sr-only">{Config('app.name')} on GitHub</span>
                     <BsTwitterX
+                      size={16}
+                      className=" text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
+                    />
+                  </a>
+                  <a
+                    href={'https://www.linkedin.com/in/danny-geisz-91a170192/'}
+                    className="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
+                    target="_blank"
+                  >
+                    <span className="sr-only">{Config('app.name')} on GitHub</span>
+                    <BsLinkedin
                       size={16}
                       className=" text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
                     />
@@ -181,13 +191,22 @@ const Header = () => {
               </div>
 
               <div className={clsx('mt-8', 'text-lg', 'text-neutral-950 dark:text-slate-200')}>
-                Nice to meet you! Well, of course we're not actually meeting -- perhaps the more
+                Nice to meet you! Well, of course we're not actually meeting — perhaps the more
                 accurate term for this would be consensual and actively encouraged internet
                 stalking. Emphasis on <i>actively encouraged</i>! I'm Danny, and at the present
-                moment I've sold my soul to mechanistic interpretability.
+                moment I'm obsessed with bringing AI and formal methods into a perfect and holy
+                union before God and Man.
                 <br />
                 <br />
-                Before this, I researched Agentic Systems at{' '}
+                Before this, I reverse-engineered LLMs using sparse coding methods through{' '}
+                <a href={'https://www.matsprogram.org/'} className={LINK_CLASSES}>
+                  MATS
+                </a>
+                , I{' '}
+                <a href={'https://en.wikipedia.org/wiki/Portuguese_Way'} className={LINK_CLASSES}>
+                  walked 175 miles
+                </a>{' '}
+                from Portugal to Spain, I researched Agentic Systems at{' '}
                 <a href={'https://imbue.com'} className={LINK_CLASSES}>
                   Imbue AI
                 </a>
