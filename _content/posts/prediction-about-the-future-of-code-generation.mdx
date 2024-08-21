@@ -28,7 +28,7 @@ Basically, AlphaProof uses the Lean Programming Language, which (importantly) do
 
 So they basically are able to rely on Lean’s mechanisms to check the correctness of proofs, and they just generate a metric shit ton of candidate proofs using Gemini until they find something that actually works. Then the proof goes back into the system, making the fine-tuned Gemini model even better at generating these candidate solutions.
 
-# Curry-Howard Correspondence is a son of a bitch
+### Curry-Howard Correspondence is a son of a bitch
 
 The whole reason the Lean Programming Language is also a theorem prover is because of something called the Curry-Howard Correspondence. Between the 30s and 60s, some smart mother fuckers realized that there’s a deep correspondence between properly-typed programming languages and formal mathematical proofs. Basically, if you set things up right, programming constructs have an equivalent construct in the world of math. Functions become theorems, types become statements, variables become proofs. It’s actually remarkably beautiful.
 
@@ -36,7 +36,7 @@ Basically, as years have gone on, people have leveraged this correspondence to c
 
 AlphaProof showed us that you get LLMs to generate proofs of IMO level math problems using Lean and LLMs working together. …but from Curry-Howard, this also means that you can do the same thing with regular-ass code.
 
-# Our AI-Overlords and going to be Lean and mean
+### Our AI-Overlords and going to be Lean and mean
 
 Excuse the dumb pun.
 
@@ -44,11 +44,11 @@ Basically, here’s what I think is going to happen. In not too long (research i
 
 If you rely on formal theorem proving to ensure code-correctness, now that dumb-ass GPT-4o doesn’t have to be right every fucking time. It just has to generate a shit ton of candidate solutions for a given task, use Lean to verify whether they’re true, and keep cranking. This really has “singularity” sorts of vibes — as the LLM gets better at generating correct code that correspond to formal statements, the bigger their fine-tuning dataset will become, making them even better at generating these problems. AlphaProof was ultimately trained on millions of problems that were automatically generated — there’s no reason why they can’t also do this with regular code.
 
-# Prediction
+### Prediction
 
 So yeah — I think LLM + Lean = the code equivalent of AGI
 
-# Caveats
+### Caveats
 
 Now, I should say, writing formal statements for regular, normal things in reality is actually quite hard. There’s a reason why humans don’t speak in mathematics all the time (that’s actually not totally applicable here, but it’s a reasonable enough analogy to do).
 
