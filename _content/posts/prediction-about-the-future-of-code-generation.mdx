@@ -1,0 +1,57 @@
+---
+title: 'Prediction about the future of code generation'
+status: 'published'
+author:
+  name: 'Danny Geisz'
+  picture: 'https://avatars.githubusercontent.com/u/47677416?v=4'
+slug: 'prediction-about-the-future-of-code-generation'
+description: ''
+coverImage: ''
+publishedAt: '2024-08-01T18:10:14.602Z'
+---
+
+Ok, so basically there are a bunch of companies and labs around SF that are basically trying to solve the problem of LLM code generation. Basically, the idea is that you want your LLM to eventually replaced your junior developer, because you don’t have social skills, and you’d rather work with a computer instead of a human.
+
+You can also pay computers way less and spew vitriol at them when bugs happen, and this isn’t an HR violation.
+
+Unfortunately, it turns out ol GPT-4o is only so good at coding. It’s basically just a stack overflow replacement for most devs. We’re not anywhere close to it being able to say, write your startup’s codebase from scratch.
+
+So it’s kinda an open question about how we’re going to get from where we are today to the glorious future where we’re all obese WALLE people sipping our shakes while the machines write all of our code for us.
+
+Here’s how I think this is going to happen.
+
+### Alpha Proof is (not so) secretly the answer
+
+A week ago, DeepMind released [AlphaProof](https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/), which is their system that was able to solve IMO math problems. Cool, right?
+
+Basically, AlphaProof uses the Lean Programming Language, which (importantly) doubles as a formal theorem prover. Basically, DeepMind fine-tuned Gemini to learn how to turn natural language statements into formal mathematical statements in Lean. Then, AlphaZero style, they basically trained a system that spits out a bunch of candidate proofs for these statements. When the system actually generates a correct proof, the proof goes back into AlphaProofs fine-tuning dataset.
+
+So they basically are able to rely on Lean’s mechanisms to check the correctness of proofs, and they just generate a metric shit ton of candidate proofs using Gemini until they find something that actually works. Then the proof goes back into the system, making the fine-tuned Gemini model even better at generating these candidate solutions.
+
+### Curry-Howard Correspondence is a son of a bitch
+
+The whole reason the Lean Programming Language is also a theorem prover is because of something called the Curry-Howard Correspondence. Between the 30s and 60s, some smart mother fuckers realized that there’s a deep correspondence between properly-typed programming languages and formal mathematical proofs. Basically, if you set things up right, programming constructs have an equivalent construct in the world of math. Functions become theorems, types become statements, variables become proofs. It’s actually remarkably beautiful.
+
+Basically, as years have gone on, people have leveraged this correspondence to create virtual theorem provers. Some notable examples are Isabelle and Coq (yes, some idiot had the bright idea to name their theorem prover “Cock”). However, a smart mother fucker named <span style="color: rgb(32, 33, 34)">Leonardo de Moura decided that he could make something even better, and he started working on Lean in 2013. Lean is meant to be a language where you can do everything — write executable code, prove formal statements about code, or just </span>[<span style="color: rgb(32, 33, 34)">formalize literally all of mathematics</span>](https://github.com/leanprover-community/mathlib4)<span style="color: rgb(32, 33, 34)"> (looking at you Kevin Buzzard).</span>
+
+AlphaProof showed us that you get LLMs to generate proofs of IMO level math problems using Lean and LLMs working together. …but from Curry-Howard, this also means that you can do the same thing with regular-ass code.
+
+### Our AI-Overlords and going to be Lean and mean
+
+Excuse the dumb pun.
+
+Basically, here’s what I think is going to happen. In not too long (research is probably literally already happening on this now), we’re basically going to get a system that does the exact same thing as AlphaProof, but for regular code.
+
+If you rely on formal theorem proving to ensure code-correctness, now that dumb-ass GPT-4o doesn’t have to be right every fucking time. It just has to generate a shit ton of candidate solutions for a given task, use Lean to verify whether they’re true, and keep cranking. This really has “singularity” sorts of vibes — as the LLM gets better at generating correct code that correspond to formal statements, the bigger their fine-tuning dataset will become, making them even better at generating these problems. AlphaProof was ultimately trained on millions of problems that were automatically generated — there’s no reason why they can’t also do this with regular code.
+
+### Prediction
+
+So yeah — I think LLM + Lean = the code equivalent of AGI
+
+### Caveats
+
+Now, I should say, writing formal statements for regular, normal things in reality is actually quite hard. There’s a reason why humans don’t speak in mathematics all the time (that’s actually not totally applicable here, but it’s a reasonable enough analogy to do).
+
+So basically turning the business logic requirements for your startup into formal statements for which LeanAlphaCodeGod finds solutions is also non-trivial.
+
+However, in my estimation, formalizing desires into formal statements feels like a much easier problem than generating the code to solve those problems. Anyway. This is the place where I think AI code generation is actually going to become godlike.
