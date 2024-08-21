@@ -14,7 +14,7 @@ A couple days ago, the [Arc Competition](https://arcprize.org/) was announced. B
 
 Just for sake of posterity, I want to predict how this competition is going to be won, and I suspect that it’ll be won in the next couple of months.
 
-# Prediction
+### Prediction
 
 You take a regular multi-modal LLM. You tell the LLM to look at the input in question. You provide both an image of each input/output grid, and you also provide a text-based representation of each input/output grid, where each cell is annotated with positional information and with the value of each cell. (This value can either be represented as an `int` or a `str` with a unique enumeration of the inputs).\
 \
@@ -24,6 +24,6 @@ Your LLM is going to fuck this up. You’ll want to include a couple rounds of c
 
 I suspect you’ll also have to include a step where you manually instruct the LLM to describe different important features of the input, and separate prompts that help the LLM figure out how these different features relate to each other.
 
-# Conclusion
+### Conclusion
 
 Eh… this is kinda vague. But I’m pretty sure this is going to be the schema that actually produces something cool.
