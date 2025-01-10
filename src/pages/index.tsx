@@ -83,7 +83,7 @@ const Header = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Danny Geisz</title>
+        <title>Danny</title>
       </Head>
       <header className="relative">
         <div className="px-4 sm:px-6 md:px-8">
@@ -106,12 +106,19 @@ const Header = () => {
             <div className="flex items-center">
               <NavPopover className="-my-1 ml-2 -mr-1" display="md:hidden" />
               <div className="hidden md:flex items-center">
-                <nav>
+                {/* <nav>
                   <ul className="flex items-center gap-x-8">
                     <NavItems />
                   </ul>
-                </nav>
-                <div className="flex items-center border-l border-slate-200 ml-6 pl-6 dark:border-slate-800">
+                </nav> */}
+                <div
+                  className={clsx(
+                    'flex items-center',
+                    // 'border-l border-slate-200',
+                    // 'dark:border-slate-800',
+                    'ml-6 pl-6'
+                  )}
+                >
                   <ThemeToggle />
                   {Config('app.repository').length > 0 && (
                     <a
@@ -193,9 +200,13 @@ const Header = () => {
               <div className={clsx('mt-8', 'text-lg', 'text-neutral-950 dark:text-slate-200')}>
                 Nice to meet you! Well, of course we're not actually meeting — perhaps the more
                 accurate term for this would be consensual and actively encouraged internet
-                stalking. Emphasis on <i>actively encouraged</i>! I'm Danny, and at the present
-                moment I'm obsessed with bringing AI and formal methods into a perfect and holy
-                union before God and Man.
+                stalking. Emphasis on <i>actively encouraged</i>! I'm Danny, and at the present I do
+                protein origami at [REDACTED]. By protein origami, I of course mean leveraging the
+                god-like power of AI to design bespoke proteins to manipulate arbitrary biological
+                mechanisms, thereby unleashing my will onto organic life. In other words: good,
+                cheeky fun :)
+                {/* and at the present moment I'm obsessed with bringing */}
+                {/* AI and formal methods into a perfect and holy union before God and Man. */}
                 <br />
                 <br />
                 Before this, I reverse-engineered LLMs using sparse coding methods through{' '}
